@@ -6,20 +6,17 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour {
 
 	private LoadScene ls;
-	public static float timer = 60.00f;
+	public static float timer = 10.00f;
 	public Text timeLeft;
+	public GameObject canvas, scoreboard; 
 
 	// Use this for initialization
 	void Start () {
-		timer = 60.0f;
+		timer = 10.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (timer <= 0f) {
-			timer = 60.0f;
-			SceneManager.LoadScene ("MainMenu");
-		}
 		timer -= Time.deltaTime;
 		float minutes = Mathf.Floor(timer / 60); 
 		float seconds = Mathf.RoundToInt(timer%60);
