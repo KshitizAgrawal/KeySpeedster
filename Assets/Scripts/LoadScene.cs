@@ -8,6 +8,7 @@ public class LoadScene : MonoBehaviour {
 	public GameObject menu, levels;
 
 	public void loadScene(int para) {
+		SaveToFile.level = para+1;
 		ShowParagraph.paragraph = Paragraphs.dict [para];
 		SceneManager.LoadScene ("Levels");
 	}

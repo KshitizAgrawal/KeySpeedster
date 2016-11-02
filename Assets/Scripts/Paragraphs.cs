@@ -23,5 +23,27 @@ public class Paragraphs : MonoBehaviour {
 			" future ahead of you. Knowing that things were meant to happen. Knowing that each day you will learn something" +
 			" so that you keep growing to be a better person. Life is like a rope, twined in all its complexities and yet" +
 			" weaved into one marvelous stream that you have the chance you use something amazing from. So grab hold of it.");
+		//About Willian Shakespeare
+		dict.Add (4, "William Shakespeare was an English poet, playwright, and actor. He was born on 26 April 1564 in " +
+		"Stratford-upon-Avon. His father was a successful local businessman and his mother was the daughter of a " +
+		"landowner. Shakespeare is widely regarded as the greatest writer in the English language and the world's " +
+		"pre-eminent dramatist. He is often called England's national poet and nicknamed the Bard of Avon. He wrote " +
+		"about 38 plays, 154 sonnets, two long narrative poems, and a few other verses, of which the authorship of " +
+		"some is uncertain. His plays have been translated into every major living language and are performed more " +
+		"often than those of any other playwright.");
+		//Mahatama Gandhi Non-Violence
+		dict.Add (5, "Gandhiji believed in non-violence and love. He was against untouchability and all sorts of injustice" +
+		" in society. He lived a saintly life and suffered a lot to see truth triumph. His heart bled for the poor and" +
+		" the oppressed. He said that all men were equal. He wanted them all to live in peace. He dreamed of a Ram Rajya" +
+		" where everybody would live in peace. He was against the modern civilization. Instead, he wanted his countrymen" +
+		" to live in the villages. His philosophy and deed are so great that he is regarded as “Mahatma” meaning “Great Soul”.");
+		//Abraham Lincoln
+		dict.Add (6, "At this difficult time, Abraham Lincoln was elected President of the USA in 1860. He wanted to solve the" +
+		" problem of slavery. The southern states were against the abolition of slavery. This brought the unity of the" +
+		" country in danger. The southern states were prepared even to form a new country. Abraham Lincoln wanted all" +
+		" the states to remain united. He faced many problems. He wanted to preserve the unity of the country at any cost." +
+		" Finally a civil war broke out between the northern and southern states. He fought the war bravely and declared," +
+		" 'A Nation cannot exist half free and half slave.' He won the war and kept the country united.");
+		
 	}
 }

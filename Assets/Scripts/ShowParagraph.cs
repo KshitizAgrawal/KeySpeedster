@@ -32,16 +32,21 @@ public class ShowParagraph : MonoBehaviour {
 	}
 
 	public void showScore() {
+		SaveToFile.completionTime = 10.0f - Timer.timer;
 		Timer.timer = 10.0f;
 		double points;
 		points = CalculateSimilarity (input.text, paragraph);
+		SaveToFile.accuracy = (float)points;
 		if (points>=0.5) {
+			SaveToFile.completed = true;
 			score.text = "Congratulations!" + "\n" + "Your Score: " + points;
 		} else {
+			SaveToFile.completed = false;
 			score.text = "Very Close" + "\n" + "Your Score: " + points;
 		}
 		canvas.SetActive (false);
 		scoreboard.SetActive (true);
+		SaveToFile save = new SaveToFile();
 	}
 
 	public void tryAgain() {
