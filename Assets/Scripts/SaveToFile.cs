@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿/* Logging all the data related to the session
+ * Saved in the directory of application com.kshitiz.keyspeedster
+ */
+using System.IO;
 using UnityEngine;
 
 public class SaveToFile

@@ -6,9 +6,9 @@ using System;
 
 public class ShowParagraph : MonoBehaviour {
 
-	private LoadScene ls;
+	//private LoadScene ls;
 	public Text txt, input, score;
-	public static string paragraph="You are my love";
+	public static string paragraph="Fuck off";
 	public GameObject canvas, scoreboard;
 
 	// Use this for initialization
@@ -29,34 +29,70 @@ public class ShowParagraph : MonoBehaviour {
 		if (Timer.timer <= 0f) {
 			showScore ();
 		}
+		if (Input.GetKey(KeyCode.Home)){
+			//Home button pressed! write every thing you want to do
+		}
+		if (Input.GetKey(KeyCode.Escape)){
+			//Escape button codes
+			showScore();
+		}
+		if(Input.GetKey(KeyCode.Menu)){
+			Application.Quit();
+		}
 	}
 
+	//on game over
 	public void showScore() {
-		SaveToFile.completionTime = 10.0f - Timer.timer;
-		Timer.timer = 10.0f;
+		SaveToFile.completionTime = 30.0f - Timer.timer;
+		Timer.timer = 30.0f;
 		double points;
-		points = CalculateSimilarity (input.text, paragraph);
-		SaveToFile.accuracy = (float)points;
-		if (points>=0.5) {
+		points = CalculateSimilarity (input.text, paragraph);		//compute accuracy
+		SaveToFile.accuracy = (float)points;						//save current accuracy to log
+		if ((float)points > Game.highscores [LoadScene.level]) {
+			Game.highscores [LoadScene.level] = (float)points;
+		}
+		Game.points += (int)(points * 100);
+		if (points >= 0.7) {
+			unlockLevel ();
 			SaveToFile.completed = true;
-			score.text = "Congratulations!" + "\n" + "Your Score: " + points;
+			score.text = "Nailed it!!" + "\n" + "Your Score: " + points;
+		} else if (points >= 0.4) {
+			SaveToFile.completed = false;
+			score.text = "IE is faster than you" + "\n" + "Your Score: " + points;
 		} else {
 			SaveToFile.completed = false;
-			score.text = "Very Close" + "\n" + "Your Score: " + points;
+			score.text = "Mr. Slow" + "\n" + "Your Score: " + points;
 		}
 		canvas.SetActive (false);
 		scoreboard.SetActive (true);
 		SaveToFile save = new SaveToFile();
+		SaveLoad.Save ();
 	}
 
+	//if tryagain button is pressed
 	public void tryAgain() {
 		canvas.SetActive (true);
 		scoreboard.SetActive (false);
+		int num = UnityEngine.Random.Range (0, 23);
+		num %= 4;
+		Debug.Log ("num is " + num);
+		SaveToFile.level = num = 4*(LoadScene.level-1) + num+1;
+		ShowParagraph.paragraph = Paragraphs.dict [num];
 		SceneManager.LoadScene("Levels");
 	}
 
+	//if main menu button is pressed
 	public void goBack() {
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+	private static void unlockLevel() {
+		if (LoadScene.level == 1) {
+			Game.levels [1] = 1;
+		}
+		else if (LoadScene.level == 2) {
+			Game.levels [2] = 1;
+		}
 	}
 
 	//computer percentage similarirty between two strings source and target

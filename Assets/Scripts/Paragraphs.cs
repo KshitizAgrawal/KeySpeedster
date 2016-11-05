@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* Five paragraphs for each level
+ * for each level paragraphs will be selected randomly
+ * length of paragraphs of same level will be same
+ */
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,7 +11,7 @@ public class Paragraphs : MonoBehaviour {
 	public static Dictionary<int, string> dict = new Dictionary<int, string>();
 
 	public static void addParagraphs() {
-		dict.Add (1, "I believe that we are who we choose to be. Nobody’s going to come and save you, you’ve " +
+		/*dict.Add (1, "I believe that we are who we choose to be. Nobody’s going to come and save you, you’ve " +
 		"got to save yourself. Nobody’s going to give you anything. You’ve got to go out and fight for it. " +
 		"Nobody knows what you want except for you. And nobody will be as sorry as you if you don’t get it. " +
 		"So don’t give up on your dreams.");
@@ -43,7 +47,36 @@ public class Paragraphs : MonoBehaviour {
 		" country in danger. The southern states were prepared even to form a new country. Abraham Lincoln wanted all" +
 		" the states to remain united. He faced many problems. He wanted to preserve the unity of the country at any cost." +
 		" Finally a civil war broke out between the northern and southern states. He fought the war bravely and declared," +
-		" 'A Nation cannot exist half free and half slave.' He won the war and kept the country united.");
+		" 'A Nation cannot exist half free and half slave.' He won the war and kept the country united.");*/
+
+		//for high excitation
+		dict.Add (5, "The Solar System consists of the Sun Moon and Planets. It also consists of comets, meteoroids " + 
+			"and asteroids. The Sun is the largest member of the Solar System. In order of distance from the Sun, the " +
+			"planets are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune and Pluto; the dwarf planet. The " +
+			"Sun is at the centre of the Solar System and the planets, asteroids, comets and meteoroids revolve around it.");
+		dict.Add (6, "The Mahabharata is a story about a great battle between the Kauravas and the Pandavas. The battle " +
+			"was fought in Kurukshetra near Delhi. Many kings and princes took part in the battle. The Pandavas defeated " +
+			"the Kauravas. The Bhagvad Gita is a holy book of the Hindus. It is a part of the Mahabharata. Then, Lord Rama, " +
+			"with the help of It is a book of collection of teachings of Lord Krishna to Arjuna in the battlefield. It is the " +
+			"longest epic in the world.");
+		dict.Add (7, "The Ramayana is a story of Lord Rama written by the SageValmiki. Lord Rama, the prince of Ayodhya, " +
+			"in order to help his father Dasharatha went to exile for fourteen years. His wife, Sita and his younger brother " +
+			"Lakshmana also went with him. He went through many difficulties in the forest. One day Ravana, the king of Lanka " +
+			"carried away Sita with him. Then, Lord Rama, with the help of Hanumana, defeated and killed Ravana; Sita, Rama " +
+			"and Lakshmana returned to Ayod hya after their exile.");
+		dict.Add (8, "Delhi is the capital of India. It is situated on the banks of the river Yamuna. It is surrounded by " +
+			"Haryana and Uttar Pradesh. It has some of the famous buildings and monuments such as the Qutub Minar, Reu Fort, " +
+			"Lotus Temple, Akshardham Temple etc. Some of the monuments are hundreds of years old. Apart from this, there is " +
+			"the Parliament House, the Central Secretariat and the famous Connaught place. Delhi is a beautiful city. But, it " +
+			"is becoming very crowded and polluted. I love Delhi a lot.");
+
+
+		//for low excitation
+		dict.Add (1, "His skin was torn. The scar ran jagged, his face ruined. His hands were strong, his touch gentle. Here lies a man, a life well spent.");
+		dict.Add (2, "Cars passed as he biked halfway over the train bridge. Fireworks exploded pink and green. No one saw him put the kickstand down and leap.");
+		dict.Add (3, "When she arrives home after work, the bedroom light is on. She did not turn it on. Water is running in the tub. She does not have a tub.");
+		dict.Add (4, "After he retired, Hal spent his mornings on the cement stoop outside his two flat. One day, he saw God walk by. He looks good, he thought.");
+
 		
 	}
 }
